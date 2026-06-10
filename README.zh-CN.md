@@ -1,5 +1,7 @@
 # SumTEditor
 
+[![CI](https://github.com/zhangchaosd/SumTEditor/actions/workflows/ci.yml/badge.svg)](https://github.com/zhangchaosd/SumTEditor/actions/workflows/ci.yml)
+
 [English](README.md)
 
 SumTEditor 是一个使用 C++17 编写的终端二进制文件编辑器，面向“定长记录”文件。

@@ -1,5 +1,7 @@
 # SumTEditor
 
+[![CI](https://github.com/zhangchaosd/SumTEditor/actions/workflows/ci.yml/badge.svg)](https://github.com/zhangchaosd/SumTEditor/actions/workflows/ci.yml)
+
 [简体中文](README.zh-CN.md)
 
 SumTEditor is a C++17 terminal editor for binary files made of fixed-length records.

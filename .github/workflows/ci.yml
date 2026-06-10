@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-test:
+    name: ${{ matrix.label }}
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: ubuntu-core
+            os: ubuntu-latest
+            build_dir: build-ubuntu-core
+            build_tui: OFF
+          - label: ubuntu-tui
+            os: ubuntu-latest
+            build_dir: build-ubuntu-tui
+            build_tui: ON
+          - label: macos-core
+            os: macos-latest
+            build_dir: build-macos-core
+            build_tui: OFF
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -S . -B "${{ matrix.build_dir }}" -DSUMT_BUILD_TUI=${{ matrix.build_tui }}
+
+      - name: Build
+        run: cmake --build "${{ matrix.build_dir }}" --parallel
+
+      - name: Test
+        run: ctest --test-dir "${{ matrix.build_dir }}" --output-on-failure
