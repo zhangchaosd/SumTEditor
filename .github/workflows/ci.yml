@@ -29,7 +29,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Configure
         run: cmake -S . -B "${{ matrix.build_dir }}" -DSUMT_BUILD_TUI=${{ matrix.build_tui }}
