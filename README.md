@@ -165,6 +165,15 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
+## GitHub Actions
+
+The repository includes CI and release workflows:
+
+- CI builds and tests pushes to `main` and pull requests.
+- Release builds Linux and macOS archives when a version tag such as `v0.1.0` is pushed.
+
+See [docs/github-actions.md](docs/github-actions.md) for a guided walkthrough.
+
 ## Roadmap
 
 - Better visual feedback for modified fields and inserted records.

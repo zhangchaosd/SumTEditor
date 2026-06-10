@@ -158,6 +158,15 @@ cmake --build build
 ctest --test-dir build --output-on-failure
 ```
 
+## GitHub Actions
+
+仓库包含 CI 和 Release 两个 workflow：
+
+- CI 会在推送到 `main` 和创建 pull request 时构建并测试项目。
+- Release 会在推送 `v0.1.0` 这类版本 tag 时构建 Linux 和 macOS 压缩包。
+
+学习说明见 [docs/github-actions.md](docs/github-actions.md)。
+
 ## 路线图
 
 - 为已修改字段和插入记录提供更清晰的视觉反馈。
